@@ -1,0 +1,12 @@
+Metric,No Cache,Cache HIT,Cache MISS
+Total Requests,238,237,239
+APDEX Score,1.0000,1.0000,1.0000
+Avg Response (ms),60.67,0.78,58.96
+Min Response (ms),54.82,0.52,54.11
+Max Response (ms),147.75,6.60,134.52
+Median Response (ms),58.72,0.68,56.87
+P90 Response (ms),65.36,0.90,61.41
+P95 Response (ms),70.58,1.02,67.30
+Satisfied Count,238,237,239
+Tolerating Count,0,0,0
+Frustrated Count,0,0,0

@@ -1,0 +1,54 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+ENV/
+env/
+*.egg-info/
+dist/
+build/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Environment variables
+*.env
+!config.env.example
+config.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test Results (optional - uncomment if you don't want to commit results)
+# results/*.json
+# results/*.csv
+# results/*.log
+
+# SSH Keys
+*.pem
+*.key
+id_rsa*
+id_ed25519*
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# K6 outputs
+summary.json
+k6-results.json

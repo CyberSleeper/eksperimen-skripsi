@@ -1,0 +1,68 @@
+{
+  "test_configuration": {
+    "timestamp": "2025-11-04T18:01:25.170Z",
+    "payload_size": "16000",
+    "test_run_id": "16000_income_run3_20251104_175954",
+    "apdex_t": 500,
+    "apdex_f": 1500,
+    "api_no_cache": "https://hightide-no-cache.sple.my.id/call/income/list",
+    "api_with_cache": "https://hightide-cache.sple.my.id/call/income/list",
+    "adaptive_vu_scaling": true,
+    "max_vus": 35
+  },
+  "no_cache": {
+    "total_requests": 200,
+    "apdex_score": 0.9825,
+    "response_times": {
+      "avg": 216.50994823999997,
+      "min": 141.891938,
+      "max": 1431.062136,
+      "med": 194.66191800000001,
+      "p90": 232.86000909999998,
+      "p95": 279.3220446999991,
+      "p99": 0
+    },
+    "satisfied": 193,
+    "tolerating": 7,
+    "frustrated": 0
+  },
+  "cache_hit": {
+    "total_requests": 199,
+    "apdex_score": 1,
+    "response_times": {
+      "avg": 12.766961361809047,
+      "min": 7.119457,
+      "max": 102.047656,
+      "med": 9.032018,
+      "p90": 16.349817600000023,
+      "p95": 36.25658279999999,
+      "p99": 0
+    },
+    "satisfied": 199,
+    "tolerating": 0,
+    "frustrated": 0
+  },
+  "cache_miss": {
+    "total_requests": 201,
+    "apdex_score": 0.9800995024875622,
+    "response_times": {
+      "avg": 205.6665091243781,
+      "min": 147.249192,
+      "max": 928.345709,
+      "med": 166.898294,
+      "p90": 239.610399,
+      "p95": 477.207113,
+      "p99": 0
+    },
+    "satisfied": 193,
+    "tolerating": 8,
+    "frustrated": 0
+  },
+  "cache_statistics": {
+    "hit_rate": 49.75,
+    "total_hits": 199,
+    "total_misses": 201,
+    "improvement_hit_vs_nocache": 94.10329111175207,
+    "improvement_hit_vs_miss": 93.79239652767765
+  }
+}

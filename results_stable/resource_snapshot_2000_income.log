@@ -1,0 +1,142 @@
+=== Resource Snapshot: No-Cache VM - before_income - Payload: 2000 - Endpoint: income ===
+Timestamp: Tue Nov  4 19:49:42 UTC 2025
+
+Memory Usage:
+              total        used        free      shared  buff/cache   available
+Mem:          1.9Gi       565Mi       234Mi        31Mi       1.1Gi       1.1Gi
+Swap:            0B          0B          0B
+
+Disk Usage:
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/root       7.6G  4.1G  3.5G  54% /
+
+Nginx Cache Size:
+
+Database Size:
+ pg_size_pretty 
+----------------
+ 15 MB
+(1 row)
+
+
+==========================================
+
+=== Resource Snapshot: Cache-Hit VM - before_income - Payload: 2000 - Endpoint: income ===
+Timestamp: Tue Nov  4 19:49:42 UTC 2025
+
+Memory Usage:
+              total        used        free      shared  buff/cache   available
+Mem:          1.9Gi       658Mi       741Mi        36Mi       525Mi       1.0Gi
+Swap:            0B          0B          0B
+
+Disk Usage:
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/root       7.6G  4.1G  3.6G  53% /
+
+Nginx Cache Size:
+8.0K	/var/cache/nginx/
+
+Database Size:
+ pg_size_pretty 
+----------------
+ 13 MB
+(1 row)
+
+
+==========================================
+
+=== Resource Snapshot: Cache-Miss VM - before_income - Payload: 2000 - Endpoint: income ===
+Timestamp: Tue Nov  4 19:49:42 UTC 2025
+
+Memory Usage:
+              total        used        free      shared  buff/cache   available
+Mem:          1.9Gi       378Mi       186Mi        31Mi       1.3Gi       1.3Gi
+Swap:            0B          0B          0B
+
+Disk Usage:
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/root       7.6G  3.4G  4.3G  45% /
+
+Nginx Cache Size:
+8.0K	/var/cache/nginx/
+
+Database Size:
+ pg_size_pretty 
+----------------
+ 13 MB
+(1 row)
+
+
+==========================================
+
+=== Resource Snapshot: No-Cache VM - after_income - Payload: 2000 - Endpoint: income ===
+Timestamp: Tue Nov  4 20:07:23 UTC 2025
+
+Memory Usage:
+              total        used        free      shared  buff/cache   available
+Mem:          1.9Gi       573Mi       220Mi        31Mi       1.1Gi       1.1Gi
+Swap:            0B          0B          0B
+
+Disk Usage:
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/root       7.6G  4.1G  3.5G  54% /
+
+Nginx Cache Size:
+
+Database Size:
+ pg_size_pretty 
+----------------
+ 15 MB
+(1 row)
+
+
+==========================================
+
+=== Resource Snapshot: Cache-Hit VM - after_income - Payload: 2000 - Endpoint: income ===
+Timestamp: Tue Nov  4 20:07:23 UTC 2025
+
+Memory Usage:
+              total        used        free      shared  buff/cache   available
+Mem:          1.9Gi       682Mi       629Mi        36Mi       614Mi       1.0Gi
+Swap:            0B          0B          0B
+
+Disk Usage:
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/root       7.6G  4.1G  3.5G  54% /
+
+Nginx Cache Size:
+8.0K	/var/cache/nginx/
+
+Database Size:
+ pg_size_pretty 
+----------------
+ 13 MB
+(1 row)
+
+
+==========================================
+
+=== Resource Snapshot: Cache-Miss VM - after_income - Payload: 2000 - Endpoint: income ===
+Timestamp: Tue Nov  4 20:07:23 UTC 2025
+
+Memory Usage:
+              total        used        free      shared  buff/cache   available
+Mem:          1.9Gi       380Mi       182Mi        31Mi       1.3Gi       1.3Gi
+Swap:            0B          0B          0B
+
+Disk Usage:
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/root       7.6G  3.4G  4.3G  45% /
+
+Nginx Cache Size:
+8.0K	/var/cache/nginx/
+
+Database Size:
+ pg_size_pretty 
+----------------
+ 13 MB
+(1 row)
+
+
+==========================================
+
