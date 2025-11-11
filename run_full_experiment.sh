@@ -4,7 +4,7 @@
 # Full Experiment Runner
 # ============================================
 # Runs automated tests sequentially for multiple payload sizes
-# WITH RAM and disk monitoring per-run
+# WITH RAM and disk monitoring per-run  
 # Uses run_multiple_tests.sh for enhanced monitoring
 
 set -e
@@ -45,15 +45,15 @@ RUNS=10
 
 # Payload sizes to test (edit this array)
 PAYLOAD_SIZES=(
-    10
-    100
-    500
-    1000
-    2000
-    4000
-    8000
-    16000
     32000
+    16000
+    8000
+    4000
+    2000
+    1000
+    500
+    100
+    10
 )
 
 # Wait time between different payload size tests (in seconds)

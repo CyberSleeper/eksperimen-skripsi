@@ -185,7 +185,7 @@ echo "Starting automated test sequence..."
 echo ""
 
 # Test endpoints array
-test_endpoints=("automatic" "income")
+test_endpoints=("income" "automatic")
 
 # Loop through each endpoint
 for endpoint_key in "${test_endpoints[@]}"; do

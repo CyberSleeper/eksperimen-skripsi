@@ -13,7 +13,7 @@ This framework supports **two load testing configurations** to provide comprehen
 - **Scenario**: Regular business hours, normal user activity
 
 ### Profile 2: High Load (50 VUs)
-- **Virtual Users**: Up to 50 (adaptive)
+- **Virtual Users**: Up to 50
 - **Duration**: ~4 minutes per test
 - **Purpose**: Peak performance, stress testing
 - **Scenario**: Peak hours, promotional events, high traffic
