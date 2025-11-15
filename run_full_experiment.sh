@@ -37,11 +37,11 @@ else
     SSH_USER="ubuntu"
     DB_NAME="aisco_product_hightide"
     DB_USER="postgres"
+    DB_PORT="5432"
     APP_RESTART_WAIT=30
+    RUNS=10
+    WAIT_BETWEEN_TESTS=15
 fi
-
-# Number of runs per endpoint for each payload size
-RUNS=10
 
 # Payload sizes to test (edit this array)
 PAYLOAD_SIZES=(
@@ -55,9 +55,6 @@ PAYLOAD_SIZES=(
     100
     10
 )
-
-# Wait time between different payload size tests (in seconds)
-WAIT_BETWEEN_TESTS=15  # Changed from 60 to 15 as per procedure
 
 # ============================================
 # HELPER FUNCTIONS
