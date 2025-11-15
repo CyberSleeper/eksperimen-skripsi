@@ -175,6 +175,7 @@ echo "Configuration:"
 echo "  Payload Size: $PAYLOAD_SIZE records"
 echo "  Number of Runs: $RUNS (per endpoint)"
 echo "  Test Script: $TEST_SCRIPT"
+echo "  Load Scenario: ${LOAD_SCENARIO:-high} (5 VUs for normal, 50 VUs for high)"
 echo "  Endpoints to Test:"
 echo "    - automatic: ${endpoints[automatic_path]}"
 echo "    - income: ${endpoints[income_path]}"
@@ -258,7 +259,7 @@ for endpoint_key in "${test_endpoints[@]}"; do
         
         # Run k6 test with appropriate script (adaptive for large payloads)
         echo "🚀 Running k6 test with script: $TEST_SCRIPT"
-        k6 run -e PAYLOAD_SIZE=$PAYLOAD_SIZE -e TEST_RUN_ID=$run_id -e ENDPOINT=$endpoint_path "$TEST_SCRIPT"
+        k6 run -e PAYLOAD_SIZE=$PAYLOAD_SIZE -e TEST_RUN_ID=$run_id -e ENDPOINT=$endpoint_path -e LOAD_SCENARIO="${LOAD_SCENARIO:-high}" "$TEST_SCRIPT"
         k6_exit_code=$?
         
         # Stop monitoring and collect data for THIS RUN

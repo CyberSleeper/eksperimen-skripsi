@@ -5,6 +5,7 @@ import { Counter, Trend } from 'k6/metrics';
 const PAYLOAD_SIZE = parseInt(__ENV.PAYLOAD_SIZE || '10');
 const TEST_RUN_ID = __ENV.TEST_RUN_ID || new Date().toISOString().replace(/[:.]/g, '-');
 const ENDPOINT = __ENV.ENDPOINT || '/call/automatic-report-twolevel/list';
+const LOAD_SCENARIO = __ENV.LOAD_SCENARIO || 'high';  // 'normal' or 'high'
 
 // --- URLs untuk testing ---
 const API_NO_CACHE = `https://hightide-no-cache.sple.my.id${ENDPOINT}`;
@@ -16,32 +17,33 @@ const APDEX_T = 500;
 const APDEX_F = 1500;
 
 function getStages() {
-  // TWO LOAD PROFILES AVAILABLE - Switch between them for comprehensive analysis
+  // TWO LOAD PROFILES AVAILABLE - Controlled via LOAD_SCENARIO env variable
   
-  // PROFILE 1: NORMAL LOAD (5 VUs)
-  // Use for: Baseline performance measurement, typical application load
-  // Uncomment this for normal load tests:
-  // return [
-  //   { duration: '15s', target: 5 },  // Ramp-up to 5 VUs
-  //   { duration: '1m', target: 5 },   // Sustained at 5 VUs (normal load)
-  //   { duration: '15s', target: 0 },  // Ramp-down
-  // ];
-
-  // PROFILE 2: HIGH LOAD (50 VUs)
-  // Use for: Peak traffic scenarios, stress testing, cache effectiveness under load
-  // Uncomment this for high load tests:
-  return [
-    { duration : '30s', target : 20 }, // Ramp-up phase 1 to 20 VUs
-    { duration : '1m', target : 20 },  // Sustained phase 1 at 20 VUs
-    { duration : '30s', target : 50 }, // Ramp-up phase 2 to 50 VUs
-    { duration : '1m', target : 50 },  // Sustained phase 2 at 50 VUs (high load)
-    { duration : '30s', target : 0 },  // Ramp-down
-  ];
+  if (LOAD_SCENARIO === 'normal') {
+    // PROFILE 1: NORMAL LOAD (5 VUs)
+    // Use for: Baseline performance measurement, typical application load
+    console.log('Using NORMAL LOAD profile (5 VUs)');
+    return [
+      { duration: '15s', target: 5 },  // Ramp-up to 5 VUs
+      { duration: '1m', target: 5 },   // Sustained at 5 VUs (normal load)
+      { duration: '15s', target: 0 },  // Ramp-down
+    ];
+  } else {
+    // PROFILE 2: HIGH LOAD (50 VUs) - Default
+    // Use for: Peak traffic scenarios, stress testing, cache effectiveness under load
+    console.log('Using HIGH LOAD profile (50 VUs)');
+    return [
+      { duration : '30s', target : 20 }, // Ramp-up phase 1 to 20 VUs
+      { duration : '1m', target : 20 },  // Sustained phase 1 at 20 VUs
+      { duration : '30s', target : 50 }, // Ramp-up phase 2 to 50 VUs
+      { duration : '1m', target : 50 },  // Sustained phase 2 at 50 VUs (high load)
+      { duration : '30s', target : 0 },  // Ramp-down
+    ];
+  }
   
   // RECOMMENDATION: Run experiments with BOTH profiles
-  // 1. First run all payloads with NORMAL LOAD (5 VUs)
-  // 2. Then run all payloads with HIGH LOAD (50 VUs)
-  // This gives you performance comparison across load conditions
+  // Set LOAD_SCENARIO="normal" in config.env for baseline tests
+  // Set LOAD_SCENARIO="high" in config.env for peak load tests
 }
 
 export const options = {
@@ -277,6 +279,7 @@ export function handleSummary(data) {
       timestamp: new Date().toISOString(),
       payload_size: PAYLOAD_SIZE.toString(),
       test_run_id: TEST_RUN_ID,
+      load_scenario: LOAD_SCENARIO,
       apdex_t: APDEX_T,
       apdex_f: APDEX_F,
       api_no_cache: API_NO_CACHE,
