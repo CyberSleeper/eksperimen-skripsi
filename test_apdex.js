@@ -14,7 +14,7 @@ const API_CACHE_MISS = `https://hightide-cache.sple.my.id${ENDPOINT}`;
 
 // --- Konfigurasi Tes ---
 const APDEX_T = 500;
-const APDEX_F = 1500;
+const APDEX_F = 4*APDEX_T;
 
 function getStages() {
   // TWO LOAD PROFILES AVAILABLE - Controlled via LOAD_SCENARIO env variable
